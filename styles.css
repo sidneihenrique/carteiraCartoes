@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 3% auto;
+
+    padding: 0 40px;
+}
+
+.ui {
+    display: flex;
+    gap: 20px;
+
+}
+
+.container-left {
+    width: 50%;
+}
+
+.container-left form{
+    width: 100%;
+}
+
+.container-left form *, .container-left form * *{
+    width: 100%;
+}
+
+.container-left form label{
+    font-size: 12px;
+}
+
+.container-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    width: 360px;
+    height: 230px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, rgb(96, 96, 96) 0%, rgb(208, 208, 208) 35%, rgb(169, 179, 208) 100%);
+    border: 1px solid rgba(0,0,0,.3);
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.intern {
+    padding: 20px;
+}
+
+.approximation {
+    width: 30px;
+    transform: rotate(90deg);
+}
+
+.chip {
+    height: 40px;
+    position: absolute;
+    right: 24px;
+    bottom: 12px;
+}
+
+.card-number {
+    margin-top: 24px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(12, 12, 12);
+    display: flex;
+}
+
+.card-holder {
+    color: black;
+}
+
+.card label {
+    font-size: 12px;
+}
+
+.card-infos {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    color: black;
+}
+
+#credit-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.number-container, .name-container {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    outline: 0;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #95B8D1;
+}
+
+button {
+    
+    background-color: #008cb1;
+    cursor: pointer;
+}
+
+.infos-container {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.expiration-container, .cvv-container{
+    display: flex;
+    flex-direction: column;
+}
+
+table{
+    padding: 16px 40px;
+}
+
+table * {
+    color: white;
+    text-align: left;
+}
+
+table td, table th{
+    padding: 10px;
+}
+
+table td a {
+    font-size: 14px;
+}
+
+table td:nth-child(3) a{
+    color: #95B8D1
+}
+
+table td:nth-child(4) a{
+    color: #f30606;
+}
+
+
+
+@media (max-width: 1024px) {
+    .ui {
+        flex-direction: column-reverse;
+    }
+
+    .container-left, .container-right {
+        width: 100%;
+    }
+}
