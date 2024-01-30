@@ -13,6 +13,9 @@ const cardHolderText = document.querySelector(".name-vl");
 const cardExpirationText = document.querySelector(".expiration-vl");
 const cardCVVText = document.querySelector(".cvv-vl");
 
+let modal = document.querySelector('.modal');
+
+
 
 var carteira = new CarteiraCartoes();
 var id = 0;
@@ -164,6 +167,8 @@ function addClickHandler(e){
                         carteira.excluirCartao(novoCartao.numero);
                         // Remove a linha da tabela
                         tabela.removeChild(novaLinha);
+                        modal.style.display = 'flex';
+                        modal.querySelector('p').innerHTML = "Cartão removido da carteira!";
                     });
 
                     // Adicione as células e links à linha
@@ -182,31 +187,35 @@ function addClickHandler(e){
                     document.querySelector('#valid-thru-text').value = "";
                     document.querySelector('#cvv-text').value =  "";
 
-
-                    alert("Cartão adicionado com sucesso!");
+                    modal.style.display = 'flex';
+                    modal.querySelector('p').innerHTML = "Cartão adicionado com sucesso!";
                 }
                 else{
-                    alert("Cartão já está na sua carteira!")
+                    modal.style.display = 'flex';
+                    modal.querySelector('p').innerHTML = "Cartão já está na sua carteira!";
                 }
             }
             else{
-                alert("CVC do cartão inválido!")
+                modal.style.display = 'flex';
+                modal.querySelector('p').innerHTML = "CVC do cartão inválido!";
                 let cvc = document.querySelector('#cvv-text').value
             }
         }
         else{
-            alert("Validade do cartão inválida!")
+            modal.style.display = 'flex';
+            modal.querySelector('p').innerHTML = "Validade do cartão inválida!";
             document.querySelector('#valid-thru-text').value = ""
         }
     }
 
     else{
-        alert("Número do cartão inválido!")
+        modal.style.display = 'flex';
+        modal.querySelector('p').innerHTML = "Número do cartão inválido!";
         document.querySelector('#card-number').value
     }
 
 
-    add.removeEventListener("click", addClickHandler)
+    // add.removeEventListener("click", addClickHandler)
     
 }
 
